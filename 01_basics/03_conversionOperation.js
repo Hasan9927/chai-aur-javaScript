@@ -14,3 +14,6 @@ console.log(booleanIsLoggedIn);
 // 1 =>true; 0 =>false
 // "" =>false;
 //"Name" =>true;
+
+/***************** Operations ************/
+
