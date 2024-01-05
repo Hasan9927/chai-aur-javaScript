@@ -30,5 +30,10 @@ console.log(Math.min(212, 1 ,454,547,45,45));// Finds the min value
 console.log(Math.max(212, 1 ,454,547,45,45));// Finds the max value
 
 console.log(Math.random()); // Gives a num between 0 to less than 1
-
 console.log(Math.floor(Math.random()*10)+1);
+
+//suppose we want a num between 10 to 20.. so we can get it by--
+const max = 20;
+const min = 11;
+const numBetween11To20 = Math.floor(Math.random()*(max-min+1)+min);
+console.log(numBetween11To20);
