@@ -9,3 +9,5 @@ console.log(myDate.toLocaleDateString());//give the local date
 console.log(myDate.toLocaleString());//gives local time and date
 console.log(myDate.toLocaleTimeString());//gives locan time only
 
+const myCreatedTime = new Date(2023, 0, 23 , 6, 30);
+console.log(myCreatedTime.toLocaleString());
