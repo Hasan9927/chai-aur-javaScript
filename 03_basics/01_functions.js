@@ -7,6 +7,9 @@ function addTwoNumber(number1, number2){//here number1 and number2 is perameters
     
 };
 const TwoNumbers = addTwoNumber(1, 2);//Here 1 and 2 is argumants
+/**
+ * (...) is called rest and spread operator based on their use case we can see that in top example
+ */
 console.log("Addition of two numbers are: " ,TwoNumbers);
 function addNumbers(num1, num2){
     return num1+num2;
