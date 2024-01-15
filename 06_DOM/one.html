@@ -5,12 +5,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
-<body>
-    <div class="parent">
+<body style="background-color: #212121;color:white">
+    <!-- <div class="parent">
         <div class="day">Mon</div>
         <div class="day">Tue</div>
         <div class="day">Wed</div>
         <div class="day">Thus</div>
-    </div>
+    </div> -->
+    
 </body>
+<script>
+    // const parent = document.querySelector(".parent");
+    // console.log(parent.children);
+    // // console.log(parent.children[0].innerHTML);
+
+    // for (let i = 0; i < parent.children.length; i++) {
+    //     // console.log(parent.children[i].innerHTML)
+        
+    // }
+    const div = document.createElement('div');
+    console.log(div);
+    div.className = 'main';
+    div.id = 'divId';
+    div.setAttribute('title', 'generated_title');
+    div.innerText = 'Created Div Text';
+    div.style.backgroundColor = 'green';
+    div.style.color = 'white';
+    div.style.padding = '10px'
+    document.body.appendChild(div)
+</script>
 </html>
