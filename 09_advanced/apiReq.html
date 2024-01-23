@@ -4,15 +4,73 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        .light{
+            background-color:white;
+            color:#212121;
+        }
+        .dark{
+            background-color:#212121;
+            color:white
+        }
+        .button{
+            background-color: rgb(227, 227, 227);
+            transition:all;
+            transition-duration: 300ms;
+        }
+        .button:hover{
+           background: rgb(68, 68, 68);
+           color: white; 
+        }
+        #card-body{
+            border: 1px solid ;
+            width: 450px;
+            height:100%;
+            border-radius: 10px;
+            padding: 20px;
+            display:none;
+            margin: 20px 0;
+        }
+        .button{
+            padding: 4px 8px; 
+            border-radius: 8px; 
+            font-weight: 600; 
+            border: none;
+             font-size: 20px; 
+             cursor: pointer;
+        }
+        #img{
+            border-radius:20px;
+        }
+    </style>
 </head>
-<body style = 'background-color: #212121;'>
-    
+<body class="dark">
+    <button id="toggle" class="button">Light mode</button>
+    <h1>Click to see the profile of legend</h1>
     <div id="card-body">
-        
+        <img id="img" src="" alt="">
+        <h3 id = "h3"></h1>
     </div>
-    btn
+    
+    <button id="btn" class="button">Click me</button>
 </body>
 <script>
+    const body = document.querySelector('body');
+    const h3 = document.querySelector('#h3');
+    const img = document.querySelector('#img');
+    const btn = document.querySelector('#btn');
+    const card = document.querySelector('#card-body');
+    const toggle = document.querySelector('#toggle');
+    toggle.addEventListener('click',function(){
+        body.classList.toggle('dark');
+        body.classList.toggle('light');
+        const isLightMode = body.classList.contains('light');
+        toggle.textContent = isLightMode ? 'Dark mode' : 'Light mode';
+       
+    })
+    
+    
+    
     const reqUrl = 'https://api.github.com/users/hiteshchoudhary'
     const xhr = new XMLHttpRequest()
     xhr.open('GET',reqUrl);
@@ -22,7 +80,13 @@
         if(xhr.readyState === 4){
              data = JSON.parse(this.response)      
         }
-        console.log(data.avatar_url); 
+        btn.addEventListener('click',function(){
+        card.style.display = card.style.display === 'none' ? 'block' : 'none';
+        btn.innerHTML = card.style.display === 'none' ? 'Click me' : 'Hide';
+        console.log(data)
+        img.src = `${data.avatar_url}`
+        h3.innerHTML = `Follwers Counter is: ${data.followers}`
+    })
     }
     
     xhr.send()
