@@ -46,13 +46,13 @@
 </head>
 <body class="dark">
     <button id="toggle" class="button">Light mode</button>
-    <h1>Click to see the profile of legend</h1>
-    <div id="card-body">
+    <h1>Click Show button to see the legend</h1>
+    <div id="card-body" style="display: none;">
         <img id="img" src="" alt="">
         <h3 id = "h3"></h1>
     </div>
     
-    <button id="btn" class="button">Click me</button>
+    <button id="btn" class="button">Show</button>
 </body>
 <script>
     const body = document.querySelector('body');
@@ -82,10 +82,10 @@
         }
         btn.addEventListener('click',function(){
         card.style.display = card.style.display === 'none' ? 'block' : 'none';
-        btn.innerHTML = card.style.display === 'none' ? 'Click me' : 'Hide';
+        btn.innerHTML = card.style.display === 'none' ? 'Show' : 'Hide';
         console.log(data)
         img.src = `${data.avatar_url}`
-        h3.innerHTML = `Follwers Counter is: ${data.followers}`
+        h3.innerHTML = `Follwers Counter is: ${data.follwers}`
     })
     }
     
